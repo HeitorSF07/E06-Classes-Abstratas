@@ -1,4 +1,4 @@
-public class Conta {
+public abstract class Conta {
 
     private int numero;
 
@@ -6,7 +6,7 @@ public class Conta {
 
     private double saldo;
 
-    private double limite;
+    protected double limite;
 
     private Operacao[] operacoes = new Operacao[1000];
 
@@ -129,10 +129,5 @@ public class Conta {
         this.dono = dono;
     }
 
-    public void setLimite(double limite) {
-        if (limite < 0)
-            limite = 0;
-
-        this.limite = limite;
-    }
+    public abstract boolean setLimite(double limite);
 }
